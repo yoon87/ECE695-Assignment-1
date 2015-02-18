@@ -1,0 +1,156 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" >
+
+       <Button
+           android:id="@+id/button5"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="buildLib"
+           android:text="Build Library" />
+
+       <Button
+           android:id="@+id/button6"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="loadLib"
+           android:text="Load Library" />
+
+       <Button
+           android:id="@+id/button2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="takePic2"
+           android:text="Reference Pic" />
+
+       <Button
+           android:id="@+id/button7"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="Find_Match"
+           android:text="Exact Match" />
+       
+       <Button
+           android:id="@+id/button8"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:onClick="Similar_Match"
+           android:text="Similar Match" />
+
+       <TextView
+           android:id="@+id/resultText"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Match result will be displayed here"
+           android:textAppearance="?android:attr/textAppearanceMedium" />
+
+   </LinearLayout>
+     
+    <LinearLayout
+            android:layout_width="wrap_content"
+        	android:layout_height="350dp" 
+        	android:orientation="horizontal" 
+        	>
+       		
+            <ImageView
+                android:id="@+id/refImageView"
+                android:layout_width="400dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@android:drawable/alert_light_frame" />
+
+            <org.opencv.android.JavaCameraView
+		        android:layout_width="700dp"
+		        android:layout_height="match_parent"
+		        android:visibility="gone"
+		        android:id="@+id/tutorial1_activity_java_surface_view"
+		        opencv:show_fps="true"
+		        android:onClick="cameraclick"
+		        opencv:camera_id="any" />
+    </LinearLayout>
+    
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:orientation="horizontal" >
+       	
+            <ImageView
+                android:id="@+id/similar_img1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="2"
+                android:src="@android:drawable/alert_light_frame" />
+
+            <ImageView
+                android:id="@+id/similar_img2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="2"
+                android:src="@android:drawable/alert_light_frame" />
+            
+              <ImageView
+                android:id="@+id/similar_img3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="2"
+                android:src="@android:drawable/alert_light_frame" />
+              
+               <ImageView
+                android:id="@+id/similar_img4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="2"
+                android:src="@android:drawable/alert_light_frame" />
+    </LinearLayout>
+    
+         <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:orientation="horizontal" 
+          >
+       	
+           <TextView
+                android:id="@+id/simText1"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:text="Similar IMG1"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            
+            <TextView
+           android:id="@+id/simText2"
+           android:layout_width="100dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.25"
+           android:gravity="center_horizontal"
+           android:text="Similar IMG2"
+	       android:textAppearance="?android:attr/textAppearanceSmall" />
+            
+            <TextView
+           android:id="@+id/simText3"
+           android:layout_width="100dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.25"
+           android:gravity="center_horizontal"           
+           android:text="Similar IMG3"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+            
+            <TextView
+           android:id="@+id/simText4"
+           android:layout_width="100dp"
+           android:layout_height="match_parent"
+           android:layout_weight="0.25"
+           android:gravity="center_horizontal" 
+           android:text="Similar IMG4"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+    
+</LinearLayout>
