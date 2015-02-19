@@ -28,7 +28,6 @@ extern "C" {
     JNIEXPORT void JNICALL Java_sang_mobile_visual_search_MainActivity_loadLib(JNIEnv * env, jobject, jlong addDescription,jstring addrFile);
     JNIEXPORT void JNICALL Java_sang_mobile_visual_search_MainActivity_refdata(JNIEnv * env, jobject, jlong addDescription,jstring addrFile);
     JNIEXPORT jint JNICALL Java_sang_mobile_visual_search_MainActivity_match(JNIEnv * env, jobject, jlong addDescription1, jlong addDescription2);
-    //JNIEXPORT Mat JNICALL Java_sang_mobile_visual_search_MainActivity_sayHello(JNIEnv *env, jobject thisObj, jstring inJNIStr);
 };
 
 JNIEXPORT void JNICALL Java_sang_mobile_visual_search_MainActivity_buildLib(JNIEnv *env, jobject thisObj, jstring addrFile)
@@ -241,31 +240,3 @@ JNIEXPORT void JNICALL Java_sang_mobile_visual_search_MainActivity_refdata(JNIEn
 
 	LOGI("End REF LIBRARY");
 }
-
-
-
-
-/*
-JNIEXPORT Mat JNICALL Java_sang_mobile_visual_search_MainActivity_sayHello(JNIEnv *env, jobject thisObj, jstring inJNIStr) {
-   // Step 1: Convert the JNI String (jstring) into C-String (char*)
-   const char *inCStr = env->GetStringUTFChars(inJNIStr, NULL);
-
-   // Step 2: Perform its intended operations
-   cout << "In C++, the received string is: " << inCStr << endl;
-   env->ReleaseStringUTFChars(inJNIStr, inCStr);  // release resources
-
-   // Prompt user for a C++ string
-   string outCppStr;
-   cout << "Enter a String: HAHAHAHAHA";
-   cin >> outCppStr;
-	// Store description to "descriptors.des".
-	FileStorage fs;
-	fs.open("/storage/emulated/0/IMG_LIB/123.xml", FileStorage::WRITE);
-	fs << "inCStr" << inCStr;
-	fs.release();
-
-	Mat result;
-   // Step 3: Convert the C++ string to C-string, then to JNI String (jstring) and return
-   return result;
-}
-*/

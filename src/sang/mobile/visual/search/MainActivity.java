@@ -223,6 +223,10 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 	}
 	
 	public void Find_Match(View w) {
+		similarPic1.setImageDrawable(0);
+		similarPic2.setImageResource(0);
+		similarPic3.setImageResource(0);
+		similarPic4.setImageResource(0);
 		Find_Match();
 		Toast.makeText(MainActivity.this, "Exact Match Found!", Toast.LENGTH_LONG).show();
 	}
@@ -303,6 +307,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 		int good_match = 0;
 		int compare = 0;
 		int index = 0;
+
 		/*
 		for (int i =0; i< FilePath.size(); i++){
 			FilePath.get(i).contains("xml");
@@ -335,7 +340,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 		int good_match = 0;
 		int compare = 0;
 		int index = 0;
-
+		
 		for (int i =0; i< 101; i++){
 			good_match = match(ref.getNativeObjAddr(), arrayDes[i].getNativeObjAddr());
 			//Log.i("FileName",""+Sorted_FilePath.get(i).toString());
@@ -353,7 +358,6 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 			}
 			match_score[temp_index] = 0;
 		}
-		
 		Log.i("FileName","Similar matched Index1: "+rank[0]);
 		Log.i("FileName","Similar matched Index2: "+rank[1]);
 		Log.i("FileName","Similar matched Index3: "+rank[2]);
@@ -369,7 +373,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 		Log.i("FileName","Similar Images 3 is: "+Sorted_FilePath.get(rank[2]).toString());
 		Log.i("FileName","Similar Images 4 is: "+Sorted_FilePath.get(rank[3]).toString());
 		
-		Mat im = Highgui.imread(Sorted_FilePath.get(rank[1]).toString());
+		Mat im = Highgui.imread(Sorted_FilePath.get(rank[0]).toString());
 		Imgproc.cvtColor(im, im, Imgproc.COLOR_BGR2RGB);
 		Bitmap bmp = Bitmap.createBitmap(im.cols(), im.rows(),
 				Bitmap.Config.ARGB_8888);
@@ -378,7 +382,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 		bmp =Bitmap.createScaledBitmap(bmp, 300, 200, true);
 		similarPic1.setImageBitmap(bmp);
 		
-		im = Highgui.imread(Sorted_FilePath.get(rank[2]).toString());
+		im = Highgui.imread(Sorted_FilePath.get(rank[1]).toString());
 		Imgproc.cvtColor(im, im, Imgproc.COLOR_BGR2RGB);
 		bmp = Bitmap.createBitmap(im.cols(), im.rows(),
 				Bitmap.Config.ARGB_8888);
@@ -387,7 +391,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 		bmp =Bitmap.createScaledBitmap(bmp, 300, 200, true);
 		similarPic2.setImageBitmap(bmp);
 		
-		im = Highgui.imread(Sorted_FilePath.get(rank[3]).toString());
+		im = Highgui.imread(Sorted_FilePath.get(rank[2]).toString());
 		Imgproc.cvtColor(im, im, Imgproc.COLOR_BGR2RGB);
 		bmp = Bitmap.createBitmap(im.cols(), im.rows(),
 				Bitmap.Config.ARGB_8888);
@@ -396,7 +400,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
 		bmp =Bitmap.createScaledBitmap(bmp, 300, 200, true);
 		similarPic3.setImageBitmap(bmp);
 		
-		im = Highgui.imread(Sorted_FilePath.get(rank[4]).toString());
+		im = Highgui.imread(Sorted_FilePath.get(rank[3]).toString());
 		Imgproc.cvtColor(im, im, Imgproc.COLOR_BGR2RGB);
 		bmp = Bitmap.createBitmap(im.cols(), im.rows(),
 				Bitmap.Config.ARGB_8888);
